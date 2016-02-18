@@ -22,7 +22,7 @@ public class LogAggregator implements Runnable {
   public void run() {
     final Logger logger = LogManager.getLogger(Thread.currentThread().getName());
 
-    logger.info("Started logAggregator " + Thread.currentThread().getName());
+    logger.info("Started logAggregator " + Thread.currentThread().getName() + " with speed factor: " + this.speed);
 
     while (true) {
       try {

@@ -4,7 +4,7 @@
 		<Console name="Console" target="SYSTEM_OUT" ignoreExceptions="false">
 			<PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n" />
 		</Console>
-		<File name="file" fileName="/tmp/RandLog.log">
+		<File name="file" fileName="RandLog.log">
 			<PatternLayout>
 				<Pattern>%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n</Pattern>
 			</PatternLayout>
