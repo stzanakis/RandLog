@@ -1,4 +1,4 @@
-package org.javanakis.RandLog;
+package org.javanakis.log.generation;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

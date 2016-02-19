@@ -1,4 +1,4 @@
-package org.javanakis.RandLog;
+package org.javanakis.log.generation.types;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package org.javanakis.RandLog;
+package org.javanakis.log.generation.types;
 
 import org.apache.logging.log4j.Level;
 

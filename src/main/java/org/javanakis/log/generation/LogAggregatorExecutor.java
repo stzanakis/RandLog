@@ -1,4 +1,4 @@
-package org.javanakis.RandLog;
+package org.javanakis.log.generation;
 
 import java.util.ArrayList;
 import java.util.List;
