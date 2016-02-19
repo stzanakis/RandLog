@@ -56,7 +56,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>org.javanakis.RandLog.RandLog</mainClass>
+							<mainClass>org.javanakis.log.generation.RandLogy</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>
