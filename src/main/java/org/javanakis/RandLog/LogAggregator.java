@@ -1,12 +1,7 @@
-/**
- * 
- */
 package org.javanakis.RandLog;
 
-import java.io.IOException;
 import java.util.concurrent.ThreadLocalRandom;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
