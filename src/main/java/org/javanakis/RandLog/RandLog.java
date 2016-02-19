@@ -6,6 +6,8 @@ import org.apache.logging.log4j.Logger;
 /**
  * @author Simon Tzanakis (Simon.Tzanakis@europeana.eu)
  * @since Feb 18, 2016
+ * 
+ * Main class, entry point to start all the LogAggregator Threads.
  */
 public class RandLog {
   final static Logger logger = LogManager.getLogger(Thread.currentThread().getName());
