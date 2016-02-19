@@ -18,7 +18,7 @@ public class RandLog {
 
     if (args.length != 4) {
       logger.fatal("Wrong number of arguments.\n"
-          + "Must be <boolean(enabled exceptions?)><numberOfThreads> <lowCap of millisecs> <highCap of millisecs> "
+          + "Must be <boolean(enabled exceptions?)><numberOfThreads> <lowCap in millisecs> <highCap in millisecs> "
           + "Setting defaults to true 10 1000 2000");
       enableExcepions = true;
       numberOfThreads = 10;
