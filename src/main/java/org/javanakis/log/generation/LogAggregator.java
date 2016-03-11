@@ -51,6 +51,7 @@ public class LogAggregator implements Runnable {
                 try (BufferedReader reader = new BufferedReader(new FileReader(urlFile))) {
                     String line;
                     while ((line = reader.readLine()) != null) {
+                        if (line.startsWith("http"))
                         LogAggregator.list.add(line);
                     }
                 } catch (IOException e) {
