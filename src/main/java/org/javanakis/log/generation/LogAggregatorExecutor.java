@@ -12,13 +12,13 @@ import java.util.concurrent.ThreadLocalRandom;
 public class LogAggregatorExecutor implements Executor {
   List<LogAggregator> logAggregatorList;
   
-  public LogAggregatorExecutor(boolean enableExceptions, int threadNumber, int speedLowCap, int speedUpCap)
+  public LogAggregatorExecutor(String method, boolean enableExceptions, int threadNumber, int speedLowCap, int speedUpCap, String filePath)
   {
     threadNumber = threadNumber == 0 ? 1 : threadNumber;
-    this.logAggregatorList = new ArrayList<LogAggregator>(threadNumber);
+    this.logAggregatorList = new ArrayList<>(threadNumber);
     for (int i = 0; i < threadNumber; i++) {
       int speed = ThreadLocalRandom.current().nextInt(speedLowCap, speedUpCap)+1;
-      this.logAggregatorList.add(new LogAggregator(enableExceptions, speed));
+      this.logAggregatorList.add(new LogAggregator(method, enableExceptions, speed, filePath));
     }
   }
   
