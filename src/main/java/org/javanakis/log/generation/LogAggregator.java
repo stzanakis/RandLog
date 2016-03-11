@@ -1,15 +1,22 @@
 package org.javanakis.log.generation;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.ArrayList;
-import java.util.concurrent.ThreadLocalRandom;
-
+import org.apache.http.HttpResponse;
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.BasicResponseHandler;
+import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.javanakis.log.generation.types.LogType;
 import org.javanakis.log.generation.types.LogTypeException;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * @author Simon Tzanakis (Simon.Tzanakis@europeana.eu)
@@ -94,13 +101,16 @@ public class LogAggregator implements Runnable {
     }
 
     private void triggerUrlRequest(String httpUrl) throws IOException {
-        URL url = new URL(httpUrl);
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-        connection.setRequestMethod("GET");
-        connection.connect();
-
-        int code = connection.getResponseCode();
-        logger.info(url.toString() + " returned " + code);
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpResponse response = httpClient.execute(new HttpGet(httpUrl));
+        new BasicResponseHandler().handleResponse(response);
+//        URL url = new URL(httpUrl);
+//        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//        connection.setRequestMethod("GET");
+//        connection.connect();
+//
+//        int code = connection.getResponseCode();
+        logger.info(httpUrl + " returned " + response.getStatusLine().getStatusCode());
     }
 
     private void normalLogging() {
